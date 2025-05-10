@@ -1,60 +1,63 @@
-Role-Based Authentication Backend Simulation
-A Node.js backend application demonstrating Role-Based Access Control (RBAC) using Express.js and MongoDB.
+# 🚀 Role-Based Authentication Backend Simulation
 
-🚀 Features
-User Registration & Login: Secure authentication with hashed passwords using bcrypt.
+A Node.js backend application demonstrating **Role-Based Access Control (RBAC)** using **Express.js** and **MongoDB**.
 
-JWT Authentication: Stateless authentication using JSON Web Tokens.
+---
 
-Role-Based Access Control: Define and manage user roles (admin, manager, user) with specific permissions.
+## 🌟 Features
 
-MongoDB Integration: Data persistence using MongoDB with Mongoose ODM.
+- **User Registration & Login**: Secure authentication with hashed passwords using `bcrypt`.
+- **JWT Authentication**: Stateless authentication using JSON Web Tokens.
+- **Role-Based Access Control**: Define and manage user roles (`admin`, `manager`, `user`) with specific permissions.
+- **MongoDB Integration**: Data persistence using MongoDB with Mongoose ODM.
+- **Environment Configuration**: Manage environment variables using `dotenv`.
 
-Environment Configuration: Manage environment variables using dotenv.
+---
 
-🛠️ Technologies Used
-Backend: Node.js, Express.js
+## 🛠️ Technologies Used
 
-Database: MongoDB, Mongoose
+- **Backend**: Node.js, Express.js  
+- **Database**: MongoDB, Mongoose  
+- **Authentication**: bcryptjs, jsonwebtoken  
+- **Environment Variables**: dotenv
 
-Authentication: bcryptjs, jsonwebtoken
+---
 
-Environment Variables: dotenv
-
-📁 Project Structure
-lua
-Copy
-Edit
+## 📁 Project Structure
 
 RoleBasedAuthBackendSimullation/
 ├── config/
-│   └── dbConnect.js
+│ └── dbConnect.js
 ├── controllers/
-│   └── authController.js
+│ └── authController.js
 ├── models/
-│   └── userModel.js
+│ └── userModel.js
 ├── routes/
-│   └── authRoutes.js
+│ └── authRoutes.js
 ├── .env
 ├── package.json
 ├── server.js
 └── README.md
-⚙️ Installation & Setup
-Clone the repository:
 
-bash
+yaml
 Copy
 Edit
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository:
+
+```bash
 git clone https://github.com/Mokshgnaism/RoleBasedAuthBackendSimullation.git
 cd RoleBasedAuthBackendSimullation
-Install dependencies:
-
+2. Install dependencies:
 bash
 Copy
 Edit
 npm install
-Configure environment variables:
-
+3. Configure environment variables:
 Create a .env file in the root directory and add the following:
 
 env
@@ -63,8 +66,7 @@ Edit
 PORT=7001
 CONNECTION_STRING=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
-Start the server:
-
+4. Start the server:
 bash
 Copy
 Edit
@@ -74,9 +76,7 @@ The server will run on http://localhost:7001.
 📬 API Endpoints
 🔐 Authentication
 Register User
-
 URL: POST /api/auth/register
-
 Body:
 
 json
@@ -88,9 +88,7 @@ Edit
   "role": "admin"
 }
 Login User
-
 URL: POST /api/auth/login
-
 Body:
 
 json
@@ -108,7 +106,6 @@ Admin: Full access to all resources and operations.
 Manager: Access to manage specific resources.
 
 User: Limited access to own data and operations.
-Medium
 
 Role-based access is enforced using middleware functions that check the user's role before granting access to protected routes.
 
@@ -116,33 +113,30 @@ Role-based access is enforced using middleware functions that check the user's r
 Use tools like Postman or Thunder Client to test the API endpoints.
 
 Register a new user:
-
 Send a POST request to /api/auth/register with the required fields.
 
 Login with the registered user:
-
 Send a POST request to /api/auth/login with the username and password.
-
 The response will include a JWT token.
 
 Access protected routes:
+Include the JWT token in the Authorization header as:
 
-Include the JWT token in the Authorization header as Bearer <token>.
-
+php-template
+Copy
+Edit
+Bearer <token>
 📌 Future Enhancements
-Email Verification: Implement email verification during registration.
+✅ Email Verification: Implement email verification during registration.
 
-Password Reset: Add functionality to reset passwords via email.
+🔁 Password Reset: Add functionality to reset passwords via email.
 
-User Profile Management: Allow users to update their profiles.
+👤 User Profile Management: Allow users to update their profiles.
 
-Enhanced Logging: Integrate logging for better monitoring and debugging.
-GitHub Docs
+📋 Enhanced Logging: Integrate logging for better monitoring and debugging.
 
 🤝 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
 📄 License
 This project is licensed under the MIT License.
-
-Feel free to customize this README.md further to match any additional features or changes in your project. Let me know if you need assistance with anything else!
